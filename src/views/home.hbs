@@ -1,0 +1,895 @@
+<html lang="en">
+  <head>
+    <title>Advanced Backend PArt I: Home</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Amilcar Barahona" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link
+      href="https://cdn.rawgit.com/lonekorean/gist-syntax-themes/848d6580/stylesheets/monokai.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="/home/js/all.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css"
+    />
+    <link rel="stylesheet" href="/home/css/simple-lightbox.min.css" />
+    <link id="theme-style" rel="stylesheet" href="/home/css/theme.css" />
+  </head>
+  <body class="docs-page">
+    <header class="header fixed-top">
+      <div class="branding docs-branding">
+        <div class="container-fluid position-relative py-2">
+          <div class="docs-logo-wrapper d-flex">
+            <button
+              id="docs-sidebar-toggler"
+              class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none"
+              type="button"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <div class="site-logo d-none d-lg-block">
+              <a class="navbar-brand" href="/">
+                <span class="logo-text">API Docs
+                  <span class="text-alt">by Amilcar</span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div
+            class="docs-top-utilities d-flex justify-content-end align-items-center"
+          >
+            <a href="/views/products" class="btn btn-primary d-lg-flex"><span
+                class="d-none d-md-block"
+              >Ir a Productos</span><i
+                class="fa-solid fa-sitemap d-flex d-md-none"
+              ></i></a>
+            <a href="/views/cart" class="btn btn-primary d-lg-flex ms-3"><span
+                class="d-none d-md-block"
+              >Ir a Carrito</span><i
+                class="fa-solid fa-cart-shopping d-flex d-md-none"
+              ></i></a>
+
+            <a
+              href="https://porfolio.amilcarcode.app/"
+              class="btn btn-secondary d-lg-flex ms-3"
+            >Porfolio</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="docs-wrapper">
+      <div id="docs-sidebar" class="docs-sidebar">
+        <nav id="docs-nav" class="docs-nav navbar">
+          <ul class="section-items list-unstyled nav flex-column pb-3">
+            <li class="nav-item section-title">
+              <a class="nav-link scrollto active" href="#section-1">
+                <span class="theme-icon-holder me-2">
+                  <i class="fas fa-map-signs"></i>
+                </span>Inicio...
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#about-ref">
+                Acerca de
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollto" href="#swagger-ref">
+                <strong>Documentación en Swagger</strong>
+              </a>
+            </li>
+            <li class="nav-item section-title mt-3">
+              <a class="nav-link scrollto" href="#section-2">
+                <span class="theme-icon-holder me-2">
+                  <i class="fas fa-arrow-down"></i>
+                </span>Primeros Pasos
+              </a>
+            </li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-2-1"
+              >Clonación del Repositorio</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-2-2"
+              >Configuración</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-2-3"
+              >Instalación</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-2-4"
+              >Inicio del Proyecto</a></li>
+            <li class="nav-item section-title mt-3"><a
+                class="nav-link scrollto"
+                href="#section-3"
+              ><span class="theme-icon-holder me-2"><i
+                    class="fas fa-box"
+                  ></i></span>Uso</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-3-1"
+              >Estructura de Productos</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-3-2"
+              >Estructura del Carrito de Compras</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-3-3"
+              >Respuesta de Endpoints</a></li>
+            <li class="nav-item section-title mt-3"><a
+                class="nav-link scrollto"
+                href="#section-4"
+              ><span class="theme-icon-holder me-2"><i
+                    class="fas fa-cogs"
+                  ></i></span>Rutas de la API</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-4-1"
+              >Rutas de Productos</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-4-2"
+              >Rutas de Carros de Compras</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-4-3"
+              >Rutas Estáticas</a></li>
+            <li class="nav-item section-title mt-3"><a
+                class="nav-link scrollto"
+                href="#section-5"
+              ><span class="theme-icon-holder me-2"><i
+                    class="fas fa-tools"
+                  ></i></span>Estructura de Rutas Estáticas</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-5-1"
+              >/views/products</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-5-2"
+              >/views/product-detail/:id</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-5-3"
+              >/views/cart</a></li>
+            <li class="nav-item section-title mt-3"><a
+                class="nav-link scrollto"
+                href="#section-6"
+              ><span class="theme-icon-holder me-2"><i
+                    class="fas fa-laptop-code"
+                  ></i></span>Mongo DB</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-6-1"
+              >Conexión</a></li>
+            <li class="nav-item section-title mt-3"><a
+                class="nav-link scrollto"
+                href="#section-7"
+              ><span class="theme-icon-holder me-2"><i
+                    class="fas fa-tablet-alt"
+                  ></i></span>Handlebars</a></li>
+            <li class="nav-item"><a
+                class="nav-link scrollto"
+                href="#item-7-1"
+              >Estructura</a></li>
+            <li class="nav-item section-title mt-3"><a
+                class="nav-link scrollto"
+                href="#section-8"
+              ><span class="theme-icon-holder me-2"><i
+                    class="fas fa-book-reader"
+                  ></i></span>Postman</a></li>
+            <li class="nav-item section-title mt-3">
+              <a class="nav-link scrollto" href="#section-9">
+                <span class="theme-icon-holder me-2">
+                  <i class="fas fa-lightbulb"></i>
+                </span>Estructura del Proyecto
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="docs-content">
+        <div class="container">
+          <article class="docs-article" id="section-1">
+            <header class="docs-header">
+              <h1 class="docs-heading">Inicio
+                <span class="docs-time">Ultima Actualización: 04/09/2024</span></h1>
+              <section class="docs-intro">
+                <p>Proyecto final de la primera parte del curso avanzado de
+                  backend en coderhouse.
+                </p>
+              </section>
+
+              <section class="docs-section" id="about-ref">
+                <h1 class="docs-heading">Acerca de</h1>
+                <p>El proyecto se estructuro de forma que pudiera mostrar una
+                  modularidad fácilmente escalable a un proyecto que solo
+                  funcione desde el server side, por ahora hay secciones del
+                  proyecto que a manera ilustrativa funcionan como una especia
+                  de frontend y tienen como nombre
+                  <strong>static</strong>
+                  como palabra clave en la nomenclatura de archivos, las rutas
+                  de renderizado y los controladores especialmente elaborados
+                  para demostración, todo esto con el objetivo de que esas
+                  partes de la aplicación puedan sustraerse de forma sencilla y
+                  rápida en posteriores iteraciones de la segunda parte del
+                  curso.
+                </p>
+                <p>Proyecto hecho con conexión a una base de datos no-relacional
+                  basada en la arquitectura de mongoDB.
+                </p>
+              </section>
+              <section class="docs-section" id="swagger-ref">
+                <h1 class="docs-heading">Documentación en Swagger</h1>
+                <p>La aplicación cuenta con una seccion en donde se pueden
+                  verificar cada unos de los servicios asi como sus
+                  correspondientes características de consulta en la ruta
+                  <strong><code>/api-docs</code></strong>
+                </p>
+                <p>Actualmente cuentan con solo 2 servicios agregados de
+                  productos
+                  <strong><code>get:api/product</code></strong>y
+                  <strong><code>get:api/product:id</code></strong>. Se irán
+                  agregando de manera progresiva los demás restantes.
+                </p>
+                <div
+                  style="width:100%; display:flex;justify-content:center;margin-bottom:20px"
+                >
+                  <a
+                    href="/api-docs"
+                    class="btn btn-primary d-lg-flex w-100 justify-content-center"
+                    style="max-width: 200px"
+                  ><span>Ir a Swagger Docs</span></a>
+                </div>
+                <p align="center">
+                  <img
+                    src="/home/images/swagger.jpg"
+                    alt="Swagger Docs"
+                    style="width:100%"
+                  />
+                </p>
+              </section>
+            </header>
+
+            <section class="docs-section" id="item-1-1">
+            </section>
+          </article>
+
+          <article class="docs-article" id="section-2">
+            <header class="docs-header">
+              <h1 class="docs-heading">Primeros Pasos</h1>
+              <section class="docs-intro">
+                <p>Esta session esta dedicada a mostrar la configuración básica
+                  del proyecto, mostrando como establecer las variables de
+                  entorno y como iniciar el proyecto.</p>
+              </section>
+            </header>
+            <section class="docs-section" id="item-2-1">
+              <h2 class="section-heading">Clonación del Repositorio</h2>
+              <p>Node.js v20.16.0</p>
+
+              <p>Repositorio publico :
+                https://github.com/amilcar-laniakea/ch-backend-1.git
+              </p>
+
+              <p>Clonar el repositorio:</p>
+
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded">
+                  <code class="json hljs">
+                    <span class="hljs-string">
+                      git-clone-https://github.com/amilcar-laniakea/ch-backend-final-proyect.git
+                    </span>
+                  </code>
+                </pre>
+              </div>
+
+              <p>Via SSH:</p>
+
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded">
+                  <code class="json hljs">
+                    <span class="hljs-string">
+                      git@github.com:amilcar-laniakea/ch-backend-1.git
+                    </span>
+                  </code>
+                </pre>
+              </div>
+            </section>
+
+            <section class="docs-section" id="item-2-2">
+              <h2 class="section-heading">Configuración</h2>
+              <h5 class="pt-3">Variables de Entorno</h5>
+              <ul>
+                <li><strong class="me-1">NODE_ENV:</strong>
+                  <code>Variable que indica el tipo de deployment</code></li>
+                <li><strong class="me-1">PORT:</strong>
+                  <code>El puerto se encuentra definido por default en el
+                    archivo principal del proyecto (app.js): 8080</code></li>
+                <li><strong class="me-1">MONGO_DB_URI:</strong>
+                  <code>La dirección en donde se encuentra la base de datos de
+                    mongoDB</code></li>
+                <li><strong class="me-1">DATABASE_NAME:</strong>
+                  <code>Nombre de la base de datos en mongoDB;</code></li>
+              </ul>
+            </section>
+
+            <section class="docs-section" id="item-2-3">
+              <h2 class="section-heading">Instalación</h2>
+              <h5 class="pt-3">Comandos de Instalación:</h5>
+              <p>npm: <code>npm install</code></p>
+              <p>pnpm: <code>npm install</code></p>
+              <p>yarn: <code>npm install</code></p>
+            </section>
+
+            <section class="docs-section" id="item-2-4">
+              <h2 class="section-heading">Inicio del Proyecto:</h2>
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded">
+                  <code class="json hljs">
+                    <span class="hljs-string">
+                      npm run start
+                    </span>
+                  </code>
+                </pre>
+              </div>
+            </section>
+          </article>
+
+          <article class="docs-article" id="section-3">
+            <header class="docs-header">
+              <h1 class="docs-heading">Uso</h1>
+              <section class="docs-intro">
+                <p>Los recursos de la aplicación como condición a la
+                  persistencia requerida para el proyecto final están basado en
+                  su uso mediante una base de datos no relacional usando
+                  MongoDB, de esta forma la misma hace uso de dos colecciones
+                  para su interacción en la app teniendo la siguiente
+                  estructura:
+                </p>
+              </section>
+            </header>
+
+            <section class="docs-section" id="item-3-1">
+              <h2 class="section-heading">Estructura de Productos</h2>
+              <div class="docs-code-block">
+                <script
+                  src="https://gist.github.com/amilcar-laniakea/d422a2c8b910145560974b546b4dbb37.js"
+                ></script>
+              </div>
+            </section>
+
+            <section class="docs-section" id="item-3-2">
+              <h2 class="section-heading">Estructura del Carrito de compras</h2>
+              <div class="docs-code-block">
+                <script
+                  src="https://gist.github.com/amilcar-laniakea/97fbb6e3ec0366f7988bb86a57644371.js"
+                ></script>
+              </div>
+              <div class="callout-block callout-block-info">
+                <div class="content">
+                  <h4 class="callout-title">
+                    <span class="callout-icon-holder me-1">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    Nota Importante!
+                  </h4>
+                  <p>En el caso anterior la variable product en el modelo de
+                    <code>&lt;cart&gt;</code>
+                    solo guarda el id del producto haciendo referencial al mismo
+                    en la colección de
+                    <code>&lt;products&gt;</code>, es un ejemplo mediante el
+                    método populate de `mongoose`, el cual se usa en la
+                    aplicación.</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="docs-section" id="item-3-3">
+              <h2 class="section-heading">Respuesta de Endpoints</h2>
+              <p>Los endpoints se dividen en tres archivos de rutas, las cuales
+                manejar sus respectivos métodos de consulta: Los servicios de la
+                APP responderán la siguiente estructura:</p>
+              <h5 class="mt-5">Ejemplo de respuesta positiva:</h5>
+              <div class="docs-code-block">
+                <script
+                  src="https://gist.github.com/amilcar-laniakea/6cdd58f3fa7b8fca5deedb20a8505c58.js"
+                ></script>
+              </div>
+              <h5 class="mt-5">Ejemplo de respuesta negativa:</h5>
+              <div class="docs-code-block">
+                <script
+                  src="https://gist.github.com/amilcar-laniakea/a649a521560e975ffa3a18b56cb8226d.js"
+                ></script>
+              </div>
+              <p>Nótese los atributos comunes a la respuesta:
+                <code>&lt;status&gt;</code>
+                indica el código de la respuesta solicitada,
+                <code>&lt;data&gt;</code>
+                para la información generada por la respuesta, en caso de ser
+                una excepción su valor sera
+                <code>&lt;null&gt;</code>
+                y acompañada de un
+                <code>&lt;message&gt;</code>
+                que detalla la información de la respuesta en caso de ser
+                necesaria, de los contrario, su valor sera
+                <code>&lt;null&gt;</code>.
+              </p>
+            </section>
+
+          </article>
+
+          <article class="docs-article" id="section-4">
+            <header class="docs-header">
+              <h1 class="docs-heading">Rutas de la API</h1>
+              <section class="docs-intro">
+                <p>Las rutas de la API se dividen en tres archivos de rutas, las
+                  cuales manejar sus respectivos métodos de consulta: Los
+                  servicios de la APP responderán la siguiente estructura:
+                </p>
+              </section>
+            </header>
+
+            <section class="docs-section" id="item-4-1">
+              <h2 class="section-heading">Rutas de Productos</h2>
+              <ul>
+                <li><strong class="me-1">GET:</strong>
+                  <code>/api/product</code>Obtiene la lista de productos. Puede
+                  enviarse como parámetros opcionales `limit, page, category,
+                  status, stock, name, code y sort` todo esto con el fin de
+                  poder hacer un filtrado avanzado en el servicio y
+                  posteriormente obtener los resultados.</li>
+                <li><strong class="me-1">GET:</strong>
+                  <code>/api/product/:id</code>Obtiene un producto con el id
+                  requerido por parámetro en ruta.</li>
+                <li><strong class="me-1">POST:</strong>
+                  <code>/api/product</code>Crea un producto con un id
+                  autogenerado, requiere los siguientes atributos enviados por
+                  el body (ejemplo de variables usadas en Postman para generar
+                  valores aleatorios de atributos):</li>
+              </ul>
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded"><code class="json hljs">
+                    <span class="hljs-attr">"title"</span>:
+                    <span class="hljs-string">"product title"</span>,
+                    <span class="hljs-attr">"description"</span>:
+                    <span class="hljs-string">"product description"</span>,
+                    <span class="hljs-attr">"category"</span>:
+                    <span class="hljs-string">"product category"</span>,
+                    <span class="hljs-attr">"code"</span>:
+                    <span class="hljs-number">1</span>,
+                    <span class="hljs-attr">"price"</span>:
+                    <span class="hljs-number">17500</span>,
+                    <span class="hljs-attr">"stock"</span>:
+                    <span class="hljs-number">2</span>
+                  </code>
+                </pre>
+              </div>
+              <ul>
+                <li><strong class="me-1">PUT:</strong>
+                  <code>/api/product/:id</code>: Actualiza el producto
+                  requerido, pueden enviarse los mismos parámetros que en el
+                  ejemplo de crear un producto, sin embargo, son de manera
+                  opcional, y pueden editarse uno por individual por request o
+                  todos a la vez, ejemplos:
+                </li>
+              </ul>
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded"><code class="json hljs">
+                    <span class="hljs-attr">"title"</span>:
+                    <span class="hljs-string">"product title"</span>,
+                  </code>
+                </pre>
+              </div>
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded">
+                  <code class="json hljs">
+                    <span class="hljs-attr">"title"</span>:
+                    <span class="hljs-string">"product title"</span>,
+                    <span class="hljs-attr">"description"</span>:
+                    <span class="hljs-string">"product description"</span>
+                  </code>
+                </pre>
+              </div>
+              <ul>
+                <li><strong class="me-1">DELETE:</strong>
+                  <code>/api/product/:id</code>: borra el producto requerido
+                </li>
+              </ul>
+            </section>
+
+            <section class="docs-section" id="item-4-2">
+              <h2 class="section-heading">Rutas de Carros de Compras</h2>
+              <ul>
+                <li><strong class="me-1">GET:</strong>
+                  <code>/api/cart</code>: Obtiene la lista de carrito de compras
+                  creados. En este caso se usa el método
+                  <code>populate()</code>
+                  para hidratar el objeto producto, el cual solo esta almacenado
+                  el id y hace referencia al id en la colección de
+                  <code>products</code>
+                </li>
+                <li><strong class="me-1">GET:</strong>
+                  <code>/api/cart/:id</code>: Obtiene un carrito de compras con
+                  el id requerido por parámetro en ruta.
+                </li>
+                <li><strong class="me-1">POST:</strong>
+                  <code>/api/cart</code>: Genera un carrito de compras con un id
+                  secuencial único y lo incluye en la lista de carritos de
+                  compras, este es necesario para usar los servicios de crear y
+                  gestionar los productos del mismo.
+                </li>
+                <li><strong class="me-1">POST:</strong>
+                  <code>/api/cart/:cid/product/:pid</code>: Este servicio tiene
+                  como principal funcion agregar productos a un carrito de
+                  compras elegido, el parámetro
+                  <code>:cid</code>
+                  indica el carrito objetivo a ser gestionado, como segundo
+                  parámetro
+                  <code>:pid</code>
+                  que representa el id del producto a agregar, este se usa junto
+                  con el parámetro por body
+                  <code>quantity</code>
+                  para verificar si el producto existe en la lista de productos
+                  generada y almacenada en
+                  <code>data/products.json</code>
+                  cuenta con la existencia de ese producto y tiene un stock
+                  suficiente para ser agregado.
+                  <p>
+                    El parámetro
+                    <code>quantity</code>
+                    (opcional) debe ser enviado de la siguiente manera (ejemplo
+                    por Postman), en caso de no ser enviado, por default se
+                    agrega un
+                    <code>1</code>
+                    solo producto: De igual forma el parámetro
+                    <code>isReduceQuantity</code>
+                    (opcional) es usado para aumentar si esta en
+                    <code>true</code>
+                    y disminuir si esta en
+                    <code>false</code>
+                    la cantidad de productos del carrito, si no es enviado por
+                    default la aplicación lo toma como un true.</p>
+                </li>
+              </ul>
+              <div class="callout-block callout-block-info">
+                <div class="content">
+                  <h4 class="callout-title">
+                    <span class="callout-icon-holder me-1">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    Nota Importante!
+                  </h4>
+                  <p>El parámetro
+                    <code>isReduceQuantity</code>
+                    es sensible y detecta la disponibilidad del stock al
+                    producto agregado, si no existe suficiente stock al momento
+                    de agregar, o al momento de disminuir mostrara un mensaje de
+                    <code>no hay stock disponible</code>
+                  </p>
+                </div>
+              </div>
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded">
+                  <code class="json hljs">
+                    <span class="hljs-attr">"quantity"</span>:
+                    <span class="hljs-number">2</span>,
+                    <span class="hljs-attr">"isReduceQuantity"</span>:
+                    <span class="hljs-number">true</span>
+                  </code>
+                </pre>
+              </div>
+              <ul>
+                <li><strong class="me-1">DELETE:</strong>
+                  <code>/api/cart/:cid/product/:pid</code>: Elimina un producto
+                  deseado por medio del id del carrito
+                  <code>:cid</code>
+                  y el id del producto
+                  <code>:pid</code>
+                </li>
+                <li><strong class="me-1">DELETE:</strong>
+                  <code>/api/cart/:id</code>: Elimina un carrito de la lista de
+                  carrito de compras por medio del parámetro
+                  <code>:id</code>
+                </li>
+              </ul>
+            </section>
+
+            <section class="docs-section" id="item-4-3">
+              <h2 class="section-heading">Rutas Estáticas</h2>
+              <div class="callout-block callout-block-info">
+                <div class="content">
+                  <h4 class="callout-title">
+                    <span class="callout-icon-holder me-1">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    Nota Importante!
+                  </h4>
+                  <p>El parámetro Estas rutas son para demostración de
+                    renderizado de contenido del lado der servidor para ser
+                    servido por frontend, los archivos clave de estas rutas
+                    exclusivas se encuentran en el archivo
+                    <code>src/routes/static.router.js</code>
+                    y sus métodos en
+                    <code>src/controllers/static.controller.js</code>
+                    de formas de ser abstraídas o quitadas con facilidad en el
+                    momento de no necesitarse mas como forma de hacer el
+                    proyecto mas escalable a largo plazo.
+                  </p>
+                </div>
+              </div>
+              <div class="callout-block callout-block-info">
+                <div class="content">
+                  <h4 class="callout-title">
+                    <span class="callout-icon-holder me-1">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    Importante!
+                  </h4>
+                  <p>Cada vista presenta en su mecánica un archivo JS vinculado
+                    a su lógica ubicado en la ruta
+                    <code>src/public/js</code>
+                  </p>
+                </div>
+              </div>
+              <p>Son las rutas usadas para renderizar del lado del servidor
+                contenido que pueda ser visualizado y manipulado por el cliente,
+                estas vistas permiten mostrar los productos que son devueltos
+                anteriormente por el endpoint
+                <code>/api/products</code>
+                de forma gráfica.</p>
+            </section>
+          </article>
+
+          <article class="docs-article" id="section-5">
+            <header class="docs-header">
+              <h1 class="docs-heading">Estructura de Rutas Estáticas</h1>
+              <section class="docs-intro">
+              </section>
+            </header>
+            <section class="docs-section" id="item-5-1">
+              <h2 class="section-heading">/views/products:</h2>
+              <p>Esta muestra los productos que son consultados a la base de
+                datos de mongoDB y los muestra sin ningún ordenamiento, de forma
+                paginada y por default como limite de elementos un total de
+                <code>10</code>, sin embargo como se muestra en la imagen,
+                existen una serie de filtros avanzados los cuales pueden
+                aplicarse a la consulta como:
+                <code>stock, status, resultados por pagina(limit), ordenamiento
+                  (sort tipo asc y des) en relación a precio, búsqueda por
+                  nombre y por código, de igual forma en endpoint esta preparado
+                  para buscar por categorías, los cuales no se incluyeron en la
+                  demostración de este frontend (revisar colección de postman
+                  ubicada en la raíz del proyecto (postman))</code>..
+              </p>
+              <div class="callout-block callout-block-info">
+                <div class="content">
+                  <h4 class="callout-title">
+                    <span class="callout-icon-holder me-1">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    Nota Importante!
+                  </h4>
+                  <p>Existen 2 botones como acciones principales en cada
+                    producto renderizado, uno redirige a la vista de
+                    <code>/views/product-detail/:pid</code>
+                    y el otro realiza la funcionalidad de agregar un producto al
+                    carro de compra, cabe destacar que al momento de realizar
+                    esta acción se verifica si existe un id de carro de compras
+                    almacenado en
+                    <code>localStorage</code>
+                    de no ser asi, este consulta el servicio de generar carro de
+                    compras y posteriormente agrega el producto al mismo, en
+                    caso contrario de existir el id del carrito, solo es
+                    obtenido y usado por la funcion de agregar producto..
+                  </p>
+                </div>
+              </div>
+              <div align="center">
+                <img
+                  src="/home/images/productList.jpg"
+                  alt="Descripción de la imagen"
+                  style="width: 100%;"
+                />
+              </div>
+              <p>La estructura de información mostrada es la misma que la
+                devuelta por el endpoint
+                <code>**GET** `api/product`</code>
+              </p>
+            </section>
+
+            <section class="docs-section" id="item-5-2">
+              <h2 class="section-heading">/views/product-detail/:id:</h2>
+              <p>Esta vista muestra a mas detalle mas información procedente del
+                servicio
+                <code>api/product/:pid</code>
+                que no es mostrada en la lista anteriormente descrita, de igual
+                manera, se muestra un botón de acción ya que en esta vista es
+                posible de igual manera agregar un producto al carro de compras
+                obteniendo el
+                <code>cid</code>
+                de localStorage como de menciono con anterioridad.</p>
+
+              <p>El botón
+                <code>Ir Al Carrito</code>
+                se encuentra disponible en esta vista al igual que en la lista
+                de productos.</p>
+
+              <p align="center">
+                <img
+                  src="/home/images/productDetail.jpg"
+                  alt="Descripción de la imagen"
+                  style="width: 100%;"
+                />
+              </p>
+            </section>
+
+            <section class="docs-section" id="item-5-3">
+              <h2 class="section-heading">/views/cart</h2>
+              <p>Esta vista muestra los productos agregados al carrito del
+                usuario que actualmente esta usando el equipo, esta vista
+                verifica la existencia de un
+                <strong><code>id</code></strong>
+                almacenado en localStorage y desde esa verificación hace la
+                consulta al servicio devolviendo solo el carrito correspondiente
+                a ese id almacenado, en caso de no existir la vista mostrara un
+                texto de
+                <strong><code>no encontrado</code></strong></p>
+
+              <p>En la vista existe por producto un botón de
+                <strong><code>eliminar</code></strong>
+                el cual elimina el producto elegido del carrito de compras, como
+                dato adicional, en la vista se muestra el total de productos y
+                precio de los mismos previamente agregados.</p>
+
+              <p>Como se explico con anterioridad, a modo de acotación: al
+                momento de agregar un producto es verificado si hay un id
+                almacenado en localStorage como nombre
+                <strong><code>cart</code></strong>, de no ser asi es creado por
+                el servicio correspondiente de
+                <strong><code>generateCart</code></strong>, en caso de existir
+                es agregado al id recogido desde localStorage.
+              </p>
+              <p align="center">
+                <img
+                  src="/home/images/cartProducts.jpg"
+                  alt="Descripción de la imagen"
+                  style="width:100%"
+                />
+              </p>
+            </section>
+          </article>
+
+          <article class="docs-article" id="section-6">
+            <header class="docs-header">
+              <h1 class="docs-heading">Mongo DB</h1>
+              <section class="docs-intro">
+                <p>Existe un archivo en la carpeta
+                  <strong><code>src/config/db.js</code></strong>
+                  el cual tiene la configuración a la conexión a la base de
+                  datos:.</p>
+              </section>
+            </header>
+            <section class="docs-section" id="item-6-1">
+              <h2 class="section-heading">Conexión</h2>
+              <div class="docs-code-block">
+                <script
+                  src="https://gist.github.com/amilcar-laniakea/6d06c5f1e7fa8fb3a6cd7d639b5fb511.js"
+                ></script>
+              </div>
+            </section>
+          </article>
+
+          <article class="docs-article" id="section-7">
+            <header class="docs-header">
+              <h1 class="docs-heading">HandleBars</h1>
+              <section class="docs-intro">
+                <p>La carpeta
+                  <strong><code>views</code></strong>
+                  contiene toda la estructura del proyecto en lo referente a la
+                  librería
+                  <strong><code>handlebars</code></strong>, tiene como carpeta
+                  principal
+                  <strong><code>layout</code></strong>
+                  en donde se encuentra el esqueleto general de la estructura
+                  html, y la carpeta
+                  <strong><code>partials</code></strong>
+                  que incluye el archivo
+                  <strong><code>productList</code></strong>
+                  que es compartido con todas las vistas estáticas.</p>
+              </section><!--//docs-intro-->
+            </header>
+            <section class="docs-section" id="item-7-1">
+              <h2 class="section-heading">Estructura</h2>
+              <ol>
+                <li>Cada plantilla tiene sus dependencias que son invocadas por
+                  medios de CDN's</li>
+                <li>Cada plantilla su archivo `.js` ubicado en la ruta
+                  `/src/public/js` que contienen la lógica necesaria para su
+                  funcionamiento</li>
+                <li>La configuración de la librería `handlebars` se encuentra
+                  ubicada en el archivo `app.js`, donde están declaradas la
+                  ubicación de la carpeta `partials` detalles como extension
+                  personalizada:</li>
+              </ol>
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded">
+                  <code class="json hljs">
+                    <span class="hljs-string">
+                      const hbs = create({ extname: "hbs", partialsDir:
+                      path.join(__dirname, "views", "partials")});
+                    </span>
+                  </code>
+                </pre>
+              </div>
+            </section>
+          </article>
+
+          <article class="docs-article" id="section-8">
+            <header class="docs-header">
+              <h1 class="docs-heading">Postman</h1>
+              <section class="docs-intro">
+                <p>En la ruta/carpeta
+                  <strong><code>/postman</code></strong>
+                  se encuentra la colección de postman necesaria a importar en
+                  la aplicación de
+                  <strong><code>/Postman</code></strong>
+                  y usar los recursos de la APP, el nombre del archivo es
+                  <strong><code>/collection_v1.json</code></strong>
+                </p>
+              </section>
+            </header>
+          </article>
+
+          <article class="docs-article" id="section-9">
+            <header class="docs-header">
+              <h1 class="docs-heading">Estructura del Proyecto</h1>
+              <section class="docs-intro">
+                <div class="docs-code-block">
+                  <script
+                    src="https://gist.github.com/amilcar-laniakea/aea86091bc99d8a366032d2557ecb312.js"
+                  ></script>
+                </div>
+              </section>
+            </header>
+          </article>
+
+          <footer class="footer">
+            <div class="container text-center py-5">
+              <small class="copyright">Designed for
+                <a
+                  class="theme-link"
+                  href="https://porfolio.amilcarcode.app/"
+                  target="_blank"
+                >Amilcar Barahona
+                </a>
+              </small>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script src="/home/js/popper.min.js"></script>
+    <script src="/home/js/bootstrap.min.js"></script>
+    <script src="/home/js/smoothscroll.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"
+    ></script>
+    <script src="/home/js/highlight-custom.js"></script>
+    <script src="/home/js/simple-lightbox.min.js"></script>
+    <script src="/home/js/docs.js"></script>
+  </body>
+</html>

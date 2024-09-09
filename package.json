@@ -1,0 +1,26 @@
+{
+  "name": "api_rest_backend_ts",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file .env --watch server.js",
+    "vercel/build": "echo build in progress ..."
+  },
+  "keywords": [],
+  "author": "Amilcar Barahona",
+  "license": "ISC",
+  "description": "api_rest_backend_ts",
+  "dependencies": {
+    "dayjs": "^1.11.13",
+    "express": "^4.19.2",
+    "express-handlebars": "^8.0.1",
+    "js-yaml": "^4.1.0",
+    "mongoose": "^8.5.1",
+    "mongoose-paginate-v2": "^1.8.3",
+    "pino": "^9.4.0",
+    "pino-pretty": "^11.2.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "4.6.3"
+  }
+}
